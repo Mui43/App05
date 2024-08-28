@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="o1">
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="item"></ion-card>
+  <img [src]="item.imageURL" />
+
+  <ion-card-header color="g1">
+    <ion-card-title>{{ item.name }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content color="g1s">
+    <ion-list>{{ item.detail }}</ion-list>
+    <ion-list>{{ item.price }} บาท</ion-list>
+  </ion-card-content>
+</ion-content>

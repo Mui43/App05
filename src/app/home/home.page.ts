@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(private Nav:NavController) {}
 
   item=[
     {
@@ -23,7 +23,7 @@ export class HomePage {
       name: 'Zenbook 14 Flip OLED (UP5401ZA-KN501WS)',
       price: 41990,
       detail: 'detail b',
-      imageURL: 'https://img.th.my-best.com/product_images/0c5134c44ecace3adfb7d33ca3526fc1.jpg?ixlib=rails-4.3.1&q=70&lossless=0&w=240&h=240&fit=fill&fill=solid&fill-color=FFFFFF&s=5caa13b61116f985339be7a7e9801c54',
+      imageURL: 'https://yourshoppy.com/wp-content/uploads/2022/06/ZenBook-14-OLED-PINE-GRAY-UP5401-7.png',
     },
 
     {
@@ -31,7 +31,7 @@ export class HomePage {
       name: 'Yoga Duet7 13ITL6-82Q70002TA',
       price: 49990,
       detail: 'detail c',
-      imageURL: 'https://img.th.my-best.com/product_images/875505e30819d60c524df5296ae8e7ca.jpg?ixlib=rails-4.3.1&q=70&lossless=0&w=240&h=240&fit=fill&fill=solid&fill-color=FFFFFF&s=366b56db6b641ec25129d221bf158ba4',
+      imageURL: 'https://p3-ofp.static.pub//fes/cms/2024/02/08/r1regnzjzgv9csuvnmas1govore689903045.png',
     },
 
     {
@@ -39,8 +39,12 @@ export class HomePage {
       name: 'Pavilion x360 14-ek0001TU',
       price: 31990,
       detail: 'detail d',
-      imageURL: 'https://img.th.my-best.com/product_images/453478dadba118a8e32cf9e8a9614ca3.jpg?ixlib=rails-4.3.1&q=70&lossless=0&w=240&h=240&fit=fill&fill=solid&fill-color=FFFFFF&s=afe9b375b549d875310767ead1c00459',
+      imageURL: 'https://notebookspec.com/storage/notebook/12462-notebook_12144_Pavilion%20x360%2014%20ek-f.jpg',
     },
   ]
+
+  gotoDetail(i:any){
+    this.Nav.navigateForward('/detail',{state:{i}});
+  }
 
 }
